@@ -1,0 +1,7 @@
+D:\test\AdminCoreSample\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+D:\test\AdminCoreSample\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+D:\test\AdminCoreSample\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+D:\test\AdminCoreSample\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+D:\test\AdminCoreSample\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+D:\test\AdminCoreSample\Domain\bin\Debug\netcoreapp3.1\Domain.runtimeconfig.json
+D:\test\AdminCoreSample\Domain\bin\Debug\netcoreapp3.1\Domain.runtimeconfig.dev.json

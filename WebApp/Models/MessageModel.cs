@@ -8,7 +8,7 @@ namespace WebApp.Models
     /// <summary>
     /// 通用返回信息类
     /// </summary>
-    public class MessageModel
+    public class MessageModel<T>
     {
         /// <summary>
         /// 状态码

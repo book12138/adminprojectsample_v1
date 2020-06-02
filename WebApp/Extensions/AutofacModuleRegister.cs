@@ -37,23 +37,23 @@ namespace WebApp.Extensions
             var cacheType = new List<Type>();
             if (Appsettings.app(new string[] { "AppSettings", "RedisCachingAOP", "Enabled" }).ObjToBool())
             {
-                builder.RegisterType<BlogRedisCacheAOP>();
-                cacheType.Add(typeof(BlogRedisCacheAOP));
+                builder.RegisterType<RedisCacheAOP>();
+                cacheType.Add(typeof(RedisCacheAOP));
             }
             if (Appsettings.app(new string[] { "AppSettings", "MemoryCachingAOP", "Enabled" }).ObjToBool())
             {
-                builder.RegisterType<BlogCacheAOP>();
-                cacheType.Add(typeof(BlogCacheAOP));
+                builder.RegisterType<CacheAOP>();
+                cacheType.Add(typeof(CacheAOP));
             }
-            if (Appsettings.app(new string[] { "AppSettings", "TranAOP", "Enabled" }).ObjToBool())
-            {
-                builder.RegisterType<BlogTranAOP>();
-                cacheType.Add(typeof(BlogTranAOP));
-            }
+            //if (Appsettings.app(new string[] { "AppSettings", "TranAOP", "Enabled" }).ObjToBool())
+            //{
+            //    builder.RegisterType<BlogTranAOP>();
+            //    cacheType.Add(typeof(BlogTranAOP));
+            //}
             if (Appsettings.app(new string[] { "AppSettings", "LogAOP", "Enabled" }).ObjToBool())
             {
-                builder.RegisterType<BlogLogAOP>();
-                cacheType.Add(typeof(BlogLogAOP));
+                builder.RegisterType<LogAOP>();
+                cacheType.Add(typeof(LogAOP));
             }
 
             // 获取 Service.dll 程序集服务，并注册

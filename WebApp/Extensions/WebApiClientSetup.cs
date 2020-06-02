@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using WebApiClient.Extensions.DependencyInjection;
-using Infrastructure.WebApiClients.HttpApis;
+//using WebApiClient.Extensions.DependencyInjection;
+//using Infrastructure.WebApiClients.HttpApis;
 
 namespace WebApp.Extensions
 {
@@ -18,16 +18,16 @@ namespace WebApp.Extensions
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddHttpApi<IBlogApi>().ConfigureHttpApiConfig(c =>
-            {
-                c.HttpHost = new Uri("http://apk.neters.club/");
-                c.FormatOptions.DateTimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
-            });
-            services.AddHttpApi<IDoubanApi>().ConfigureHttpApiConfig(c =>
-            {
-                c.HttpHost = new Uri("http://api.xiaomafeixiang.com/");
-                c.FormatOptions.DateTimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
-            });
+            //services.AddHttpApi<IBlogApi>().ConfigureHttpApiConfig(c =>
+            //{
+            //    c.HttpHost = new Uri("http://apk.neters.club/");
+            //    c.FormatOptions.DateTimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
+            //});
+            //services.AddHttpApi<IDoubanApi>().ConfigureHttpApiConfig(c =>
+            //{
+            //    c.HttpHost = new Uri("http://api.xiaomafeixiang.com/");
+            //    c.FormatOptions.DateTimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
+            //});
         }
     }
 }

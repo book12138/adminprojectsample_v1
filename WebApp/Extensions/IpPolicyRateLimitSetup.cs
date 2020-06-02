@@ -1,4 +1,4 @@
-﻿using AspNetCoreRateLimit;
+﻿//using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,11 +17,11 @@ namespace WebApp.Extensions
 
             services.AddMemoryCache();
 
-            services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimiting"));
-            services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
-            services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+            //services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimiting"));
+            //services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+            //services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            //services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
         }
     }
 }

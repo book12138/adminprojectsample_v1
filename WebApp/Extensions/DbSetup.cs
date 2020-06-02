@@ -1,4 +1,4 @@
-﻿using WebApp.Model.Models;
+﻿//using WebApp.Model.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
@@ -13,8 +13,8 @@ namespace WebApp.Extensions
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddScoped<DBSeed>();
-            services.AddScoped<MyContext>();
+            //services.AddScoped<DBSeed>();
+            //services.AddScoped<MyContext>();
         }
     }
 }

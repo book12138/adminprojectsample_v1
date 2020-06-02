@@ -117,7 +117,7 @@ namespace WebApp.Extensions
             // 这里冗余写了一次,因为很多人看不到
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             // 注入权限处理器
-            services.AddScoped<IAuthorizationHandler, PermissionHandler>();
+            //services.AddScoped<IAuthorizationHandler, PermissionHandler>();
             services.AddSingleton(permissionRequirement);
         }
     }

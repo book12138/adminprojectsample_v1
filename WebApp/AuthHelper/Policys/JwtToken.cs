@@ -1,4 +1,4 @@
-﻿using WebApp.Model.ViewModels;
+﻿using WebApp.Models;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;

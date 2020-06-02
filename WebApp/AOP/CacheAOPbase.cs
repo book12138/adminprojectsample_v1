@@ -53,11 +53,11 @@ namespace WebApp.AOP
                 {
                     var obj = arg as Expression;
                     var result = Resolve(obj);
-                    return Common.Helper.MD5Helper.MD5Encrypt16(result);
+                    return Infrastructure.Helper.MD5Helper.MD5Encrypt16(result);
                 }
                 else if (arg.GetType().IsClass)
                 {
-                    return Common.Helper.MD5Helper.MD5Encrypt16(Newtonsoft.Json.JsonConvert.SerializeObject(arg));
+                    return Infrastructure.Helper.MD5Helper.MD5Encrypt16(Newtonsoft.Json.JsonConvert.SerializeObject(arg));
                 }
             }
             return string.Empty;

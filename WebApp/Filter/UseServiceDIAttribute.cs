@@ -1,5 +1,4 @@
-﻿using WebApp.IServices;
-using Castle.Core.Logging;
+﻿using Castle.Core.Logging;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,13 +12,11 @@ namespace WebApp.Filter
     {
 
         protected readonly ILogger<UseServiceDIAttribute> _logger;
-        private readonly IBlogArticleServices _blogArticleServices;
         private readonly string _name;
 
-        public UseServiceDIAttribute(ILogger<UseServiceDIAttribute> logger, IBlogArticleServices blogArticleServices,string Name="")
+        public UseServiceDIAttribute(ILogger<UseServiceDIAttribute> logger,string Name="")
         {
             _logger = logger;
-            _blogArticleServices = blogArticleServices;
             _name = Name;
         }
 

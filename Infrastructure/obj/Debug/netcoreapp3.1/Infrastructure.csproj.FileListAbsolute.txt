@@ -5,3 +5,12 @@ D:\test\AdminCoreSample\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.As
 D:\test\AdminCoreSample\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.pdb
 D:\test\AdminCoreSample\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
 D:\test\AdminCoreSample\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb
+G:\dotnet_2020\adminprojectsample_v1\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.deps.json
+G:\dotnet_2020\adminprojectsample_v1\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.dll
+G:\dotnet_2020\adminprojectsample_v1\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+G:\dotnet_2020\adminprojectsample_v1\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csprojAssemblyReference.cache
+G:\dotnet_2020\adminprojectsample_v1\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfoInputs.cache
+G:\dotnet_2020\adminprojectsample_v1\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfo.cs
+G:\dotnet_2020\adminprojectsample_v1\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache
+G:\dotnet_2020\adminprojectsample_v1\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
+G:\dotnet_2020\adminprojectsample_v1\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb

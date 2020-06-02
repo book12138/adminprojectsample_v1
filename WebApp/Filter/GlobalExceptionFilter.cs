@@ -1,5 +1,5 @@
 ﻿using Infrastructure.LogHelper;
-using WebApp.Hubs;
+using Infrastructure.Hubs;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

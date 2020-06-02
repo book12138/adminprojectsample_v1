@@ -10,9 +10,8 @@ using System.IO;
 using Infrastructure.LogHelper;
 using StackExchange.Profiling;
 using System.Text.RegularExpressions;
-using WebApp.IServices;
 using Newtonsoft.Json;
-using WebApp.Hubs;
+using Infrastructure.Hubs;
 using Microsoft.AspNetCore.SignalR;
 using Infrastructure;
 

@@ -1,6 +1,6 @@
-﻿using WebApp.Tasks;
+﻿//using WebApp.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using Quartz.Spi;
+//using Quartz.Spi;
 using System;
 
 namespace WebApp.Extensions
@@ -14,12 +14,12 @@ namespace WebApp.Extensions
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddHostedService<Job1TimedService>();
-            services.AddHostedService<Job2TimedService>();
+            //services.AddHostedService<Job1TimedService>();
+            //services.AddHostedService<Job2TimedService>();
 
-            services.AddSingleton<IJobFactory, JobFactory>();
-            services.AddTransient<Job_Blogs_Quartz>();//Job使用瞬时依赖注入
-            services.AddSingleton<ISchedulerCenter, SchedulerCenterServer>();
+            //services.AddSingleton<IJobFactory, JobFactory>();
+            //services.AddTransient<Job_Blogs_Quartz>();//Job使用瞬时依赖注入
+            //services.AddSingleton<ISchedulerCenter, SchedulerCenterServer>();
         }
     }
 }

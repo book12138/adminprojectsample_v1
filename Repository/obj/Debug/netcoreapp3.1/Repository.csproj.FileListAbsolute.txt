@@ -1,0 +1,12 @@
+G:\dotnet_2020\adminprojectsample_v1\Repository\bin\Debug\netcoreapp3.1\Repository.deps.json
+G:\dotnet_2020\adminprojectsample_v1\Repository\bin\Debug\netcoreapp3.1\Repository.dll
+G:\dotnet_2020\adminprojectsample_v1\Repository\bin\Debug\netcoreapp3.1\Repository.pdb
+G:\dotnet_2020\adminprojectsample_v1\Repository\bin\Debug\netcoreapp3.1\Domain.dll
+G:\dotnet_2020\adminprojectsample_v1\Repository\bin\Debug\netcoreapp3.1\Domain.pdb
+G:\dotnet_2020\adminprojectsample_v1\Repository\obj\Debug\netcoreapp3.1\Repository.csprojAssemblyReference.cache
+G:\dotnet_2020\adminprojectsample_v1\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.cache
+G:\dotnet_2020\adminprojectsample_v1\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
+G:\dotnet_2020\adminprojectsample_v1\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
+G:\dotnet_2020\adminprojectsample_v1\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CopyComplete
+G:\dotnet_2020\adminprojectsample_v1\Repository\obj\Debug\netcoreapp3.1\Repository.dll
+G:\dotnet_2020\adminprojectsample_v1\Repository\obj\Debug\netcoreapp3.1\Repository.pdb

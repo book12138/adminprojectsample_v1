@@ -209,3 +209,4 @@ G:\dotnet_2020\adminprojectsample_v1\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcAp
 G:\dotnet_2020\adminprojectsample_v1\WebApp\bin\Debug\netcoreapp3.1\Application.dll
 G:\dotnet_2020\adminprojectsample_v1\WebApp\bin\Debug\netcoreapp3.1\Application.pdb
 G:\dotnet_2020\adminprojectsample_v1\WebApp\bin\Debug\netcoreapp3.1\Infrastructure.xml
+G:\dotnet_2020\adminprojectsample_v1\WebApp\bin\Debug\netcoreapp3.1\Dockerfile

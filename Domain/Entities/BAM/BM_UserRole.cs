@@ -13,15 +13,15 @@ namespace Domain.Entities
         /// <summary>
         /// ID
         /// </summary>
-        public int Id { get; set; }
+        public long Id { get; set; }
         /// <summary>
         /// BM_Role表的 角色ID
         /// </summary>
-        public int RoleId { get; set; }
+        public long RoleId { get; set; }
         /// <summary>
         /// BM_Menu表的 菜单ID
         /// </summary>
-        public int MenuId { get; set; }
+        public long MenuId { get; set; }
         /// <summary>
         /// 创建时间
         /// </summary>

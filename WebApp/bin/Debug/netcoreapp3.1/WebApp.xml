@@ -4,200 +4,6 @@
         <name>WebApp</name>
     </assembly>
     <members>
-        <member name="T:WebApp.AOP.CacheAOP">
-            <summary>
-            面向切面的缓存使用
-            </summary>
-        </member>
-        <member name="M:WebApp.AOP.CacheAOPbase.Intercept(Castle.DynamicProxy.IInvocation)">
-            <summary>
-            AOP的拦截方法
-            </summary>
-            <param name="invocation"></param>
-        </member>
-        <member name="M:WebApp.AOP.CacheAOPbase.CustomCacheKey(Castle.DynamicProxy.IInvocation)">
-            <summary>
-            自定义缓存的key
-            </summary>
-            <param name="invocation"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApp.AOP.CacheAOPbase.GetArgumentValue(System.Object)">
-            <summary>
-            object 转 string
-            </summary>
-            <param name="arg"></param>
-            <returns></returns>
-        </member>
-        <member name="T:WebApp.AOP.LogAOP">
-            <summary>
-            拦截器BlogLogAOP 继承IInterceptor接口
-            </summary>
-        </member>
-        <member name="M:WebApp.AOP.LogAOP.Intercept(Castle.DynamicProxy.IInvocation)">
-            <summary>
-            实例化IInterceptor唯一方法 
-            </summary>
-            <param name="invocation">包含被拦截方法的信息</param>
-        </member>
-        <member name="T:WebApp.AOP.RedisCacheAOP">
-            <summary>
-            面向切面的缓存使用
-            </summary>
-        </member>
-        <member name="T:WebApp.AOP.UserAuditAOP">
-            <summary>
-            面向切面的缓存使用
-            </summary>
-        </member>
-        <member name="M:WebApp.AuthHelper.OverWrite.JwtHelper.IssueJwt(WebApp.AuthHelper.OverWrite.TokenModelJwt)">
-            <summary>
-            颁发JWT字符串
-            </summary>
-            <param name="tokenModel"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApp.AuthHelper.OverWrite.JwtHelper.SerializeJwt(System.String)">
-            <summary>
-            解析
-            </summary>
-            <param name="jwtStr"></param>
-            <returns></returns>
-        </member>
-        <member name="T:WebApp.AuthHelper.OverWrite.TokenModelJwt">
-            <summary>
-            令牌
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.OverWrite.TokenModelJwt.Uid">
-            <summary>
-            Id
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.OverWrite.TokenModelJwt.Role">
-            <summary>
-            角色
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.OverWrite.TokenModelJwt.Work">
-            <summary>
-            职能
-            </summary>
-        </member>
-        <member name="T:WebApp.AuthHelper.JwtTokenAuth">
-            <summary>
-            中间件
-            原做为自定义授权中间件
-            先做检查 header token的使用
-            </summary>
-        </member>
-        <member name="F:WebApp.AuthHelper.JwtTokenAuth._next">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:WebApp.AuthHelper.JwtTokenAuth.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
-            <summary>
-            
-            </summary>
-            <param name="next"></param>
-        </member>
-        <member name="M:WebApp.AuthHelper.JwtTokenAuth.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
-            <summary>
-            
-            </summary>
-            <param name="httpContext"></param>
-            <returns></returns>
-        </member>
-        <member name="T:WebApp.AuthHelper.JwtToken">
-            <summary>
-            JWTToken生成类
-            </summary>
-        </member>
-        <member name="M:WebApp.AuthHelper.JwtToken.BuildJwtToken(System.Security.Claims.Claim[],WebApp.AuthHelper.PermissionRequirement)">
-            <summary>
-            获取基于JWT的Token
-            </summary>
-            <param name="claims">需要在登陆的时候配置</param>
-            <param name="permissionRequirement">在startup中定义的参数</param>
-            <returns></returns>
-        </member>
-        <member name="T:WebApp.AuthHelper.PermissionItem">
-            <summary>
-            用户或角色或其他凭据实体,就像是订单详情一样
-            之前的名字是 Permission
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.PermissionItem.Role">
-            <summary>
-            用户或角色或其他凭据名称
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.PermissionItem.Url">
-            <summary>
-            请求Url
-            </summary>
-        </member>
-        <member name="T:WebApp.AuthHelper.PermissionRequirement">
-            <summary>
-            必要参数类，类似一个订单信息
-            继承 IAuthorizationRequirement，用于设计自定义权限处理器PermissionHandler
-            因为AuthorizationHandler 中的泛型参数 TRequirement 必须继承 IAuthorizationRequirement
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.PermissionRequirement.Permissions">
-            <summary>
-            用户权限集合，一个订单包含了很多详情，
-            同理，一个网站的认证发行中，也有很多权限详情(这里是Role和URL的关系)
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.PermissionRequirement.DeniedAction">
-            <summary>
-            无权限action
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.PermissionRequirement.ClaimType">
-            <summary>
-            认证授权类型
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.PermissionRequirement.LoginPath">
-            <summary>
-            请求路径
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.PermissionRequirement.Issuer">
-            <summary>
-            发行人
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.PermissionRequirement.Audience">
-            <summary>
-            订阅人
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.PermissionRequirement.Expiration">
-            <summary>
-            过期时间
-            </summary>
-        </member>
-        <member name="P:WebApp.AuthHelper.PermissionRequirement.SigningCredentials">
-            <summary>
-            签名验证
-            </summary>
-        </member>
-        <member name="M:WebApp.AuthHelper.PermissionRequirement.#ctor(System.String,System.Collections.Generic.List{WebApp.AuthHelper.PermissionItem},System.String,System.String,System.String,Microsoft.IdentityModel.Tokens.SigningCredentials,System.TimeSpan)">
-            <summary>
-            构造
-            </summary>
-            <param name="deniedAction">拒约请求的url</param>
-            <param name="permissions">权限集合</param>
-            <param name="claimType">声明类型</param>
-            <param name="issuer">发行人</param>
-            <param name="audience">订阅人</param>
-            <param name="signingCredentials">签名验证实体</param>
-            <param name="expiration">过期时间</param>
-        </member>
         <member name="T:WebApp.AutoMapper.AutoMapperConfig">
             <summary>
             静态全局 AutoMapper 配置文件
@@ -208,275 +14,51 @@
             配置构造函数，用来创建关系映射
             </summary>
         </member>
-        <member name="T:WebApp.Controllers.ValuesController">
+        <member name="T:WebApp.Controllers.AccountController">
             <summary>
-            测试
+            账号服务
             </summary>
         </member>
-        <member name="M:WebApp.Controllers.ValuesController.Get">
+        <member name="F:WebApp.Controllers.AccountController._accountService">
             <summary>
-            测试get
+            账号应用服务
             </summary>
+        </member>
+        <member name="M:WebApp.Controllers.AccountController.#ctor(Application.IServices.IAccountService)">
+            <summary>
+            构造注入
+            </summary>
+            <param name="accountService"></param>
+        </member>
+        <member name="M:WebApp.Controllers.AccountController.Login(Infrastructure.Dto.UsernamePasswordCombinationDto)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="dto"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApp.Controllers.ValuesController.Get(System.Int32)">
+        <member name="M:WebApp.Controllers.AccountController.UsernameExists(System.String)">
             <summary>
-            测试带参数get
+            检测用户是否存在
             </summary>
-            <param name="id"></param>
+            <param name="username">用户名</param>
             <returns></returns>
         </member>
-        <member name="M:WebApp.Controllers.ValuesController.Post(System.String)">
+        <member name="M:WebApp.Controllers.AccountController.Register(Infrastructure.Dto.AccountRegisterDto)">
             <summary>
-            测试post
+            注册账号
             </summary>
-            <param name="value"></param>
+            <param name="dto"></param>
+            <returns></returns>
         </member>
-        <member name="M:WebApp.Controllers.ValuesController.Put(System.Int32,System.String)">
-            <summary>
-            测试put
-            </summary>
-            <param name="id"></param>
-            <param name="value"></param>
-        </member>
-        <member name="M:WebApp.Controllers.ValuesController.Delete(System.Int32)">
-            <summary>
-            测试delete
-            </summary>
-            <param name="id"></param>
-        </member>
-        <member name="T:WebApp.Extensions.AppConfigSetup">
+        <member name="T:WebApp.Middlewares.SwaggerMildd">
             <summary>
             Cors 启动服务
             </summary>
         </member>
-        <member name="T:WebApp.Extensions.AuthorizationSetup">
-            <summary>
-            Db 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.Authorization_Ids4Setup">
-            <summary>
-            权限 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.AutoMapperSetup">
-            <summary>
-            Automapper 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.CorsSetup">
-            <summary>
-            Cors 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.DbSetup">
-            <summary>
-            Db 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.HttpContextSetup">
-            <summary>
-            Db 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.IpPolicyRateLimitSetup">
-            <summary>
-            Cors 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.JobSetup">
-            <summary>
-            Cors 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.MemoryCacheSetup">
-            <summary>
-            Cors 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.MiniProfilerSetup">
-            <summary>
-            MiniProfiler 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.SwaggerSetup">
+        <member name="T:WebApp.Middlewares.SwaggerSetup">
             <summary>
             Swagger 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.WebApiClientSetup">
-            <summary>
-            WebApiClientSetup 启动服务
-            </summary>
-        </member>
-        <member name="M:WebApp.Extensions.WebApiClientSetup.AddHttpApi(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-            <summary>
-            注册WebApiClient接口
-            </summary>
-            <param name="services"></param>
-        </member>
-        <member name="T:WebApp.Extensions.AllServicesMildd">
-            <summary>
-            Cors 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Extensions.SwaggerMildd">
-            <summary>
-            Cors 启动服务
-            </summary>
-        </member>
-        <member name="T:WebApp.Filter.GlobalRouteAuthorizeConvention">
-            <summary>
-            Summary:全局路由权限公约
-            Remarks:目的是针对不同的路由，采用不同的授权过滤器
-            如果 controller 上不加 [Authorize] 特性，默认都是 Permission 策略
-            否则，如果想特例其他授权机制的话，需要在 controller 上带上  [Authorize]，然后再action上自定义授权即可，比如 [Authorize(Roles = "Admin")]
-            </summary>
-        </member>
-        <member name="T:WebApp.Filter.GlobalAuthorizeFilter">
-            <summary>
-            全局权限过滤器【无效】
-            </summary>
-        </member>
-        <member name="T:WebApp.Filter.GlobalExceptionsFilter">
-            <summary>
-            全局异常错误日志
-            </summary>
-        </member>
-        <member name="M:WebApp.Filter.GlobalExceptionsFilter.WriteLog(System.String,System.Exception)">
-            <summary>
-            自定义返回格式
-            </summary>
-            <param name="throwMsg"></param>
-            <param name="ex"></param>
-            <returns></returns>
-        </member>
-        <member name="P:WebApp.Filter.JsonErrorResponse.Message">
-            <summary>
-            生产环境的消息
-            </summary>
-        </member>
-        <member name="P:WebApp.Filter.JsonErrorResponse.DevelopmentMessage">
-            <summary>
-            开发环境的消息
-            </summary>
-        </member>
-        <member name="T:WebApp.Filter.GlobalRoutePrefixFilter">
-            <summary>
-            全局路由前缀公约
-            </summary>
-        </member>
-        <member name="T:WebApp.Middlewares.IPLogMildd">
-            <summary>
-            中间件
-            记录IP请求数据
-            </summary>
-        </member>
-        <member name="F:WebApp.Middlewares.IPLogMildd._next">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:WebApp.Middlewares.IPLogMildd.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
-            <summary>
-            
-            </summary>
-            <param name="next"></param>
-        </member>
-        <member name="M:WebApp.Middlewares.MiddlewareHelpers.UseJwtTokenAuth(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
-            <summary>
-            自定义授权中间件
-            </summary>
-            <param name="app"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApp.Middlewares.MiddlewareHelpers.UseReuestResponseLog(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
-            <summary>
-            请求响应中间件
-            </summary>
-            <param name="app"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApp.Middlewares.MiddlewareHelpers.UseSignalRSendMildd(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
-            <summary>
-            SignalR中间件
-            </summary>
-            <param name="app"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApp.Middlewares.MiddlewareHelpers.UseExceptionHandlerMidd(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
-            <summary>
-            异常处理中间件
-            </summary>
-            <param name="app"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApp.Middlewares.MiddlewareHelpers.UseIPLogMildd(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
-            <summary>
-            IP请求中间件
-            </summary>
-            <param name="app"></param>
-            <returns></returns>
-        </member>
-        <member name="T:WebApp.Middlewares.RequRespLogMildd">
-            <summary>
-            中间件
-            记录请求和响应数据
-            </summary>
-        </member>
-        <member name="F:WebApp.Middlewares.RequRespLogMildd._next">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:WebApp.Middlewares.RequRespLogMildd.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
-            <summary>
-            
-            </summary>
-            <param name="next"></param>
-        </member>
-        <member name="T:WebApp.Middlewares.SignalRSendMildd">
-            <summary>
-            中间件
-            记录请求和响应数据
-            </summary>
-        </member>
-        <member name="F:WebApp.Middlewares.SignalRSendMildd._next">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:WebApp.Middlewares.SignalRSendMildd.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.AspNetCore.SignalR.IHubContext{Infrastructure.Hubs.ChatHub})">
-            <summary>
-            
-            </summary>
-            <param name="next"></param>
-            <param name="hubContext"></param>
-        </member>
-        <member name="T:WebApp.Models.MessageModel`1">
-            <summary>
-            通用返回信息类
-            </summary>
-        </member>
-        <member name="P:WebApp.Models.MessageModel`1.status">
-            <summary>
-            状态码
-            </summary>
-        </member>
-        <member name="P:WebApp.Models.MessageModel`1.success">
-            <summary>
-            操作是否成功
-            </summary>
-        </member>
-        <member name="P:WebApp.Models.MessageModel`1.msg">
-            <summary>
-            返回信息
-            </summary>
-        </member>
-        <member name="P:WebApp.Models.MessageModel`1.response">
-            <summary>
-            返回数据集合
             </summary>
         </member>
         <member name="T:WebApp.SwaggerHelper.CustomApiVersion">

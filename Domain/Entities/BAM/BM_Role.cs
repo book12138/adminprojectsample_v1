@@ -1,6 +1,7 @@
 ﻿using Domain.Base;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Domain.Entities
@@ -13,11 +14,17 @@ namespace Domain.Entities
         /// <summary>
         /// 主键ID
         /// </summary>
-        public int Id { get; set; }
+        [Key]
+        public long Id { get; set; }
         /// <summary>
         /// 角色名
         /// </summary>
+        [Required]
         public string Name { get; set; }
+        /// <summary>
+        /// 排序字段
+        /// </summary>
+        public int Sort { get; set; } = 99;
         /// <summary>
         /// 创建时间
         /// </summary>

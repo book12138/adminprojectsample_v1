@@ -16,8 +16,13 @@ namespace Repository.UnitOfWork
         /// <summary>
         /// EF 上下文
         /// </summary>
-        public EFDbContext Db { get; set; }
-
+        protected readonly BAMDbContext _db;
+        /// <summary>
+        /// 构造注入 EF 上下文实例
+        /// </summary>
+        /// <param name="context"></param>
+        public UnitOfWork(BAMDbContext context)
+            => this._db = context;
         /// <summary>
         /// 启用一个局部范围的事务
         /// （内置异常捕获和事务提交与回滚）
@@ -25,19 +30,19 @@ namespace Repository.UnitOfWork
         /// <param name="operation"></param>
         /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        public T UsingScopeTransaction<T>(Func<EFDbContext, T> operation, Action<Exception> handlerExceptionCustom = null)
+        public T UsingScopeTransaction<T>(Func<BAMDbContext, T> operation, Action<Exception> handlerExceptionCustom = null)
         {
             T result = default(T);
-            using(var transaction = this.Db.Database.BeginTransaction())
+            using(var transaction = this._db.Database.BeginTransaction())
             {
                 try
                 {
-                    result = operation.Invoke(this.Db);
-                    transaction.CommitAsync();
+                    result = operation.Invoke(this._db);
+                    transaction.Commit();
                 }
                 catch(Exception e)
                 {                    
-                    transaction.RollbackAsync();
+                    transaction.Rollback();
                     (handlerExceptionCustom ?? (ex => { throw ex; })).Invoke(e);
                 }
             }
@@ -50,18 +55,18 @@ namespace Repository.UnitOfWork
         /// <param name="operation"></param>
         /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        public void UsingScopeTransaction(Action<EFDbContext> operation, Action<Exception> handlerExceptionCustom = null)
+        public void UsingScopeTransaction(Action<BAMDbContext> operation, Action<Exception> handlerExceptionCustom = null)
         {
-            using (var transaction = this.Db.Database.BeginTransaction())
+            using (var transaction = this._db.Database.BeginTransaction())
             {
                 try
                 {
-                    operation.Invoke(this.Db);
-                    transaction.CommitAsync();
+                    operation.Invoke(this._db);
+                    transaction.Commit();
                 }
                 catch (Exception e)
                 {
-                    transaction.RollbackAsync();
+                    transaction.Rollback();
                     (handlerExceptionCustom ?? (ex => { throw ex; })).Invoke(e);
                 }
             }
@@ -73,7 +78,7 @@ namespace Repository.UnitOfWork
         /// <param name="operation"></param>
         /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        public async Task<T> UsingScopeTransactionAsync<T>(Func<EFDbContext, T> operation, Action<Exception> handlerExceptionCustom = null)
+        public async Task<T> UsingScopeTransactionAsync<T>(Func<BAMDbContext, T> operation, Action<Exception> handlerExceptionCustom = null)
             => await Task.Run(() => this.UsingScopeTransaction(operation,handlerExceptionCustom));
         /// <summary>
         /// 启用一个局部范围的事务
@@ -82,7 +87,7 @@ namespace Repository.UnitOfWork
         /// <param name="operation"></param>
         /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        public async Task UsingScopeTransactionAsync(Action<EFDbContext> operation, Action<Exception> handlerExceptionCustom = null)
+        public async Task UsingScopeTransactionAsync(Action<BAMDbContext> operation, Action<Exception> handlerExceptionCustom = null)
             => await Task.Run(() => this.UsingScopeTransaction(operation, handlerExceptionCustom));
     }
 }

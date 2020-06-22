@@ -16,3 +16,8 @@ G:\dotnet_2020\adminprojectsample_v1\Domain\obj\Debug\netcoreapp3.1\Domain.cspro
 G:\dotnet_2020\adminprojectsample_v1\Domain\obj\Debug\netcoreapp3.1\Domain.dll
 G:\dotnet_2020\adminprojectsample_v1\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
 G:\dotnet_2020\adminprojectsample_v1\Domain\obj\Debug\netcoreapp3.1\Domain.genruntimeconfig.cache
+G:\dotnet_2020\adminprojectsample_v1\Domain\bin\Debug\netcoreapp3.1\Infrastructure.dll
+G:\dotnet_2020\adminprojectsample_v1\Domain\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+G:\dotnet_2020\adminprojectsample_v1\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+G:\dotnet_2020\adminprojectsample_v1\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CopyComplete
+G:\dotnet_2020\adminprojectsample_v1\Domain\bin\Debug\netcoreapp3.1\Infrastructure.xml

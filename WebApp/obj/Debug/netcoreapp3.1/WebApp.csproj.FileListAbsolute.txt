@@ -202,6 +202,10 @@ G:\dotnet_2020\adminprojectsample_v1\WebApp\obj\Debug\netcoreapp3.1\WebApp.pdb
 G:\dotnet_2020\adminprojectsample_v1\WebApp\obj\Debug\netcoreapp3.1\WebApp.genruntimeconfig.cache
 G:\dotnet_2020\adminprojectsample_v1\WebApp\bin\Debug\netcoreapp3.1\WebApp.xml
 G:\dotnet_2020\adminprojectsample_v1\WebApp\bin\Debug\netcoreapp3.1\index.html
+G:\dotnet_2020\adminprojectsample_v1\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 G:\dotnet_2020\adminprojectsample_v1\WebApp\obj\Debug\netcoreapp3.1\WebApp.csproj.CoreCompileInputs.cache
 G:\dotnet_2020\adminprojectsample_v1\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cs
 G:\dotnet_2020\adminprojectsample_v1\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cache
+G:\dotnet_2020\adminprojectsample_v1\WebApp\bin\Debug\netcoreapp3.1\Application.dll
+G:\dotnet_2020\adminprojectsample_v1\WebApp\bin\Debug\netcoreapp3.1\Application.pdb
+G:\dotnet_2020\adminprojectsample_v1\WebApp\bin\Debug\netcoreapp3.1\Infrastructure.xml

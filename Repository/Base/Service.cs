@@ -8,7 +8,7 @@ namespace Repository.Base
     /// <summary>
     /// 领域服务基类
     /// </summary>
-    public class Service : Repository.UnitOfWork.UnitOfWork , IService
+    public class Service : IService
     {   
 
     }

@@ -13,7 +13,7 @@ namespace Domain.Entities
         /// <summary>
         /// 主键ID
         /// </summary>
-        public int Id { get; set; }
+        public long Id { get; set; }
         /// <summary>
         /// 登录名
         /// </summary>

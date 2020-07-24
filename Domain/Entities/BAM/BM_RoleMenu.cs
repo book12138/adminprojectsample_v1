@@ -8,7 +8,7 @@ namespace Domain.Entities
     /// <summary>
     /// 后台管理——角色与菜单
     /// </summary>
-    public class BM_RoleMenu : IEntity
+    public class BM_RoleMenu : IStrongOperationRecording
     {
         /// <summary>
         /// ID
@@ -25,21 +25,21 @@ namespace Domain.Entities
         /// <summary>
         /// 创建时间
         /// </summary>
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; } = DateTime.Now;
         /// <summary>
         /// 修改时间
         /// </summary>
-        public string UpdateTime { get; set; }
+        public DateTime UpdateTime { get; set; } = DateTime.Now;
         /// <summary>
         /// 创建者
         /// 0 表示system
         /// </summary>
-        public int Creator { get; set; } = 0;
+        public long Creator { get; set; } = 0;
         /// <summary>
         /// 修改者
         /// 0 表示system
         /// </summary>
-        public int Mender { get; set; } = 0;
+        public long Mender { get; set; } = 0;
         /// <summary>
         /// true : 已删除  false ：未删除
         /// </summary>

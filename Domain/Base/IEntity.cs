@@ -9,5 +9,9 @@ namespace Domain.Base
     /// </summary>
     public interface IEntity
     {
+        /// <summary>
+        /// true : 已删除  false ：未删除
+        /// </summary>
+        bool IsDeleted { get; set; }
     }
 }

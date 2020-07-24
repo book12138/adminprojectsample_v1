@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Repository.Repositories
 {
-    public class BM_MenuRepository : Repository<BM_Menu> , IBM_MenuRepository
+    public class BM_MenuRepository : SOR_Repository<BM_Menu> , IBM_MenuRepository
     {
     }
 }

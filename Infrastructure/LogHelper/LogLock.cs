@@ -1,5 +1,4 @@
 ﻿using Infrastructure.Helper;
-using Infrastructure.Hubs;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json;

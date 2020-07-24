@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Application.IServices;
 using Infrastructure.Dto;
 using Infrastructure.Dto.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +17,8 @@ namespace WebApp.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("_myAllowSpecificOrigins")]
+    [EnableCors(PolicyName = "_myAllowSpecificOrigins")]
+    [Authorize]
     public class AccountController : ControllerBase
     {
         /// <summary>

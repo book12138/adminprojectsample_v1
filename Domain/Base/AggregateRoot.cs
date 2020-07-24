@@ -9,5 +9,9 @@ namespace Domain.Base
     /// </summary>
     public abstract class AggregateRoot : IEntity
     {
+        /// <summary>
+        /// true : 已删除  false ：未删除
+        /// </summary>
+        public bool IsDeleted { get; set; } = false;
     }
 }

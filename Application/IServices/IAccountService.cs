@@ -7,6 +7,9 @@ using System.Text;
 
 namespace Application.IServices
 {
+    /// <summary>
+    /// 关于后台管理登录账户的 应用服务
+    /// </summary>
     public interface IAccountService : IBaseService
     {
         /// <summary>

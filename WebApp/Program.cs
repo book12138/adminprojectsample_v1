@@ -21,7 +21,7 @@ namespace WebApp
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseUrls("http://[::]:27643");
+                    //webBuilder.UseUrls("http://[::]:27643");
                     webBuilder.UseStartup<Startup>();
                 }).UseServiceProviderFactory(new AutofacServiceProviderFactory());//使用AutoFac做IOC和AOP
     }

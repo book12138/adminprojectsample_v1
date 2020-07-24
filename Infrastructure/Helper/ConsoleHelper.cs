@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Infrastructure.Helper
 {
+    /// <summary>
+    /// 控制台 内容输出
+    /// </summary>
     public static class ConsoleHelper
     {
         static void WriteColorLine(string str, ConsoleColor color)

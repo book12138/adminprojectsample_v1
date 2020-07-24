@@ -9,7 +9,7 @@ namespace Domain.IRepositories
     /// <summary>
     /// 后台管理——用户角色仓储
     /// </summary>
-    public interface IBM_RoleRepository : IRepository<BM_Role>
+    public interface IBM_RoleRepository : ISOR_Repository<BM_Role>
     {
     }
 }

@@ -51,6 +51,29 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
+        <member name="T:WebApp.Controllers.PermissionController">
+            <summary>
+            后台权限操作
+            </summary>
+        </member>
+        <member name="F:WebApp.Controllers.PermissionController._menuService">
+            <summary>
+            后台管理 菜单应用服务
+            </summary>
+        </member>
+        <member name="M:WebApp.Controllers.PermissionController.#ctor(Application.IServices.IMenuService)">
+            <summary>
+            构造注入
+            </summary>
+            <param name="menuService"></param>
+        </member>
+        <member name="M:WebApp.Controllers.PermissionController.AddMenu(Infrastructure.Dto.NewMenuRecordDto)">
+            <summary>
+            添加新菜单
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
         <member name="T:WebApp.Middlewares.SwaggerMildd">
             <summary>
             Cors 启动服务

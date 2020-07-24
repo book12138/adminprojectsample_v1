@@ -28,22 +28,22 @@ namespace Repository.UnitOfWork
         /// （内置异常捕获和事务提交与回滚）
         /// </summary>
         /// <param name="operation"></param>
-        /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        public T UsingScopeTransaction<T>(Func<BAMDbContext, T> operation, Action<Exception> handlerExceptionCustom = null)
+        public T UsingScopeTransaction<T>(Func<BAMDbContext, T> operation, Action<Exception> exceptionCustomHandle = null)
         {
             T result = default(T);
-            using(var transaction = this._db.Database.BeginTransaction())
+            using (var transaction = this._db.Database.BeginTransaction())
             {
                 try
                 {
                     result = operation.Invoke(this._db);
                     transaction.Commit();
                 }
-                catch(Exception e)
-                {                    
+                catch (Exception e)
+                {
                     transaction.Rollback();
-                    (handlerExceptionCustom ?? (ex => { throw ex; })).Invoke(e);
+                    (exceptionCustomHandle ?? (ex => { throw ex; })).Invoke(e);
                 }
             }
             return result;
@@ -53,9 +53,9 @@ namespace Repository.UnitOfWork
         /// （内置异常捕获和事务提交与回滚）
         /// </summary>
         /// <param name="operation"></param>
-        /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        public void UsingScopeTransaction(Action<BAMDbContext> operation, Action<Exception> handlerExceptionCustom = null)
+        public void UsingScopeTransaction(Action<BAMDbContext> operation, Action<Exception> exceptionCustomHandle = null)
         {
             using (var transaction = this._db.Database.BeginTransaction())
             {
@@ -67,7 +67,7 @@ namespace Repository.UnitOfWork
                 catch (Exception e)
                 {
                     transaction.Rollback();
-                    (handlerExceptionCustom ?? (ex => { throw ex; })).Invoke(e);
+                    (exceptionCustomHandle ?? (ex => { throw ex; })).Invoke(e);
                 }
             }
         }
@@ -76,18 +76,53 @@ namespace Repository.UnitOfWork
         /// （内置异常捕获和事务提交与回滚）
         /// </summary>
         /// <param name="operation"></param>
-        /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        public async Task<T> UsingScopeTransactionAsync<T>(Func<BAMDbContext, T> operation, Action<Exception> handlerExceptionCustom = null)
-            => await Task.Run(() => this.UsingScopeTransaction(operation,handlerExceptionCustom));
+        public T UsingScopeTransaction<T>(Func<BAMDbContext, T> operation, Func<Exception, T> exceptionCustomHandle = null)
+        {
+            T result = default(T);
+            using (var transaction = this._db.Database.BeginTransaction())
+            {
+                try
+                {
+                    result = operation.Invoke(this._db);
+                    transaction.Commit();
+                }
+                catch (Exception e)
+                {
+                    transaction.Rollback();
+                    result = (exceptionCustomHandle ?? (ex => { throw ex; })).Invoke(e);
+                }
+            }
+            return result;
+        }
+
         /// <summary>
         /// 启用一个局部范围的事务
         /// （内置异常捕获和事务提交与回滚）
         /// </summary>
         /// <param name="operation"></param>
-        /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        public async Task UsingScopeTransactionAsync(Action<BAMDbContext> operation, Action<Exception> handlerExceptionCustom = null)
-            => await Task.Run(() => this.UsingScopeTransaction(operation, handlerExceptionCustom));
+        public async Task<T> UsingScopeTransactionAsync<T>(Func<BAMDbContext, T> operation, Action<Exception> exceptionCustomHandle = null)
+            => await Task.Run(() => this.UsingScopeTransaction(operation, exceptionCustomHandle));
+        /// <summary>
+        /// 启用一个局部范围的事务
+        /// （内置异常捕获和事务提交与回滚）
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
+        /// <returns></returns>
+        public async Task UsingScopeTransactionAsync(Action<BAMDbContext> operation, Action<Exception> exceptionCustomHandle = null)
+            => await Task.Run(() => this.UsingScopeTransaction(operation, exceptionCustomHandle));
+        /// <summary>
+        /// 启用一个局部范围的事务
+        /// （内置异常捕获和事务提交与回滚）
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
+        /// <returns></returns>
+        public async Task<T> UsingScopeTransactionAsync<T>(Func<BAMDbContext, T> operation, Func<Exception, T> exceptionCustomHandle = null)
+            => await Task.Run(() => this.UsingScopeTransaction(operation, exceptionCustomHandle));
     }
 }

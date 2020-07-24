@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Jwt
 {
-    public class JwtHelper
+    public static class JwtHelper
     {
         public static readonly string secretKey = "ahfuawivb754huab21n5n1";
 
@@ -70,6 +71,24 @@ namespace Infrastructure.Jwt
                 Uid = long.TryParse(jwtToken.Id,out long temp) ? temp : 0,
             };
             return tm;
+        }
+
+        /// <summary>
+        /// 从请求文中，获取token中，包含的信息
+        /// </summary>
+        /// <param name="httpContext"></param>
+        /// <returns></returns>
+        public static TokenModelJwt GetTokenModel(this HttpContext httpContext)
+        {
+            var temp = httpContext.Request;
+            if (temp.Headers.TryGetValue("Authorization", out Microsoft.Extensions.Primitives.StringValues value))
+            {
+                string token = value.ToString().Split(' ')[1];
+                var result = SerializeJwt(token);
+                return result;
+            }
+            else
+                return null;
         }
     }
 }

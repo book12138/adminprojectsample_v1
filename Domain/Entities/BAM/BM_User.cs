@@ -8,7 +8,7 @@ namespace Domain.Entities
     /// <summary>
     /// 后台管理——用户表
     /// </summary>
-    public class BM_User : AggregateRoot
+    public class BM_User : AggregateRoot , IEntity
     {
         /// <summary>
         /// 主键ID
@@ -25,10 +25,6 @@ namespace Domain.Entities
         /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime CreateTime { get; set; } = DateTime.Now;
-        /// <summary>
-        /// true : 已删除  false ：未删除
-        /// </summary>
-        public bool IsDeleted { get; set; } = false;
+        public DateTime RegisterTime { get; set; } = DateTime.Now;
     }
 }

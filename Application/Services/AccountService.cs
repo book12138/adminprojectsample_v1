@@ -83,6 +83,6 @@ namespace Application.Services
                 if (recordInsertResult)
                     token = JwtHelper.IssueJwt(new TokenModelJwt { Uid = newUserModel.Id });
                 return new RegisterResult() { IsSuccess = recordInsertResult, Message = !recordInsertResult ? "发生未知错误，注册失败" : "", Token = token };
-            });
+            }, exception => throw exception);
     }
 }

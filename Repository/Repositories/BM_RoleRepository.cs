@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Repository.Repositories
 {
-    public class BM_RoleRepository : Base.Repository<BM_Role> , IBM_RoleRepository
+    public class BM_RoleRepository : Base.SOR_Repository<BM_Role> , IBM_RoleRepository
     {
     }
 }

@@ -23,16 +23,19 @@ namespace Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<string>("CreateTime")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime(6)");
 
-                    b.Property<int>("Creator")
-                        .HasColumnType("int");
+                    b.Property<long>("Creator")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Desc")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("HtmlClass")
+                    b.Property<bool>("Enable")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Icon")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<bool>("IsDeleted")
@@ -41,23 +44,24 @@ namespace Domain.Migrations
                     b.Property<bool>("IsShow")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int>("Mender")
-                        .HasColumnType("int");
+                    b.Property<long>("Mender")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("Parent")
-                        .HasColumnType("int");
+                    b.Property<long>("ParentId")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("Sort")
                         .HasColumnType("int");
 
-                    b.Property<string>("UpdateTime")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime(6)");
 
-                    b.Property<string>("url")
+                    b.Property<string>("Url")
+                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
@@ -71,17 +75,17 @@ namespace Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<string>("CreateTime")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime(6)");
 
-                    b.Property<int>("Creator")
-                        .HasColumnType("int");
+                    b.Property<long>("Creator")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int>("Mender")
-                        .HasColumnType("int");
+                    b.Property<long>("Mender")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -90,8 +94,8 @@ namespace Domain.Migrations
                     b.Property<int>("Sort")
                         .HasColumnType("int");
 
-                    b.Property<string>("UpdateTime")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
@@ -104,17 +108,17 @@ namespace Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<string>("CreateTime")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime(6)");
 
-                    b.Property<int>("Creator")
-                        .HasColumnType("int");
+                    b.Property<long>("Creator")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int>("Mender")
-                        .HasColumnType("int");
+                    b.Property<long>("Mender")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("MenuId")
                         .HasColumnType("bigint");
@@ -122,8 +126,8 @@ namespace Domain.Migrations
                     b.Property<long>("RoleId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("UpdateTime")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
@@ -136,9 +140,6 @@ namespace Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
@@ -147,6 +148,9 @@ namespace Domain.Migrations
 
                     b.Property<string>("Password")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime>("RegisterTime")
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
@@ -159,17 +163,17 @@ namespace Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<string>("CreateTime")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime(6)");
 
-                    b.Property<int>("Creator")
-                        .HasColumnType("int");
+                    b.Property<long>("Creator")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int>("Mender")
-                        .HasColumnType("int");
+                    b.Property<long>("Mender")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("MenuId")
                         .HasColumnType("bigint");
@@ -177,8 +181,8 @@ namespace Domain.Migrations
                     b.Property<long>("RoleId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("UpdateTime")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 

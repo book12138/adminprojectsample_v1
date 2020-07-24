@@ -57,9 +57,7 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton(new Appsettings(Configuration));
-
-            services.AddSwaggerSetup();// swagger
+            //services.AddSingleton(new Appsettings(Configuration));            
 
             services.AddControllers(o =>
             {
@@ -82,9 +80,10 @@ namespace WebApp
                 options.AddPolicy(MyAllowSpecificOrigins,
                 builder =>
                 {
-                    builder.AllowAnyOrigin()
+                    builder.WithOrigins("http://localhost:27123")
                     .AllowAnyHeader()
-                    .AllowAnyMethod();
+                    .AllowAnyMethod()
+                    .AllowCredentials();             
                 });
             });
             #endregion
@@ -123,6 +122,8 @@ namespace WebApp
                 options.UseMySql(Configuration.GetConnectionString("sampleConn")), ServiceLifetime.Scoped);
 
             #endregion
+
+            services.AddSwaggerSetup();// swagger
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -146,7 +147,7 @@ namespace WebApp
 
             app.UseRouting();
 
-            app.UseCors(MyAllowSpecificOrigins); //øÁ”Ú
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthentication(); //jwt
 

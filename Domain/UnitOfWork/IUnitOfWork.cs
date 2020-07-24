@@ -22,32 +22,48 @@ namespace Domain.UnitOfWork
         /// （内置异常捕获和事务提交与回滚）
         /// </summary>
         /// <param name="operation"></param>
-        /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        Task<T> UsingScopeTransactionAsync<T>(Func<BAMDbContext, T> operation, Action<Exception> handlerExceptionCustom = null);
+        Task<T> UsingScopeTransactionAsync<T>(Func<BAMDbContext, T> operation, Action<Exception> exceptionCustomHandle = null);
         /// <summary>
         /// 启用一个局部范围的事务
         /// （内置异常捕获和事务提交与回滚）
         /// </summary>
         /// <param name="operation"></param>
-        /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        Task UsingScopeTransactionAsync(Action<BAMDbContext> operation, Action<Exception> handlerExceptionCustom = null);
+        Task<T> UsingScopeTransactionAsync<T>(Func<BAMDbContext, T> operation, Func<Exception,T> exceptionCustomHandle = null);
         /// <summary>
         /// 启用一个局部范围的事务
         /// （内置异常捕获和事务提交与回滚）
         /// </summary>
         /// <param name="operation"></param>
-        /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        T UsingScopeTransaction<T>(Func<BAMDbContext, T> operation, Action<Exception> handlerExceptionCustom = null);
+        Task UsingScopeTransactionAsync(Action<BAMDbContext> operation, Action<Exception> exceptionCustomHandle = null);
         /// <summary>
         /// 启用一个局部范围的事务
         /// （内置异常捕获和事务提交与回滚）
         /// </summary>
         /// <param name="operation"></param>
-        /// <param name="handlerExceptionCustom">自定义错误处理程序（默认直接throw出去）</param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
         /// <returns></returns>
-        void UsingScopeTransaction(Action<BAMDbContext> operation, Action<Exception> handlerExceptionCustom = null);
+        T UsingScopeTransaction<T>(Func<BAMDbContext, T> operation, Action<Exception> exceptionCustomHandle = null);
+        /// <summary>
+        /// 启用一个局部范围的事务
+        /// （内置异常捕获和事务提交与回滚）
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
+        /// <returns></returns>
+        T UsingScopeTransaction<T>(Func<BAMDbContext, T> operation, Func<Exception,T> exceptionCustomHandle = null);
+        /// <summary>
+        /// 启用一个局部范围的事务
+        /// （内置异常捕获和事务提交与回滚）
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="exceptionCustomHandle">自定义错误处理程序（默认直接throw出去）</param>
+        /// <returns></returns>
+        void UsingScopeTransaction(Action<BAMDbContext> operation, Action<Exception> exceptionCustomHandle = null);
     }
 }

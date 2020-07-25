@@ -77,7 +77,8 @@ namespace Application.Services
                     Name = dto.Name.Trim(),
                     Password = dto.Password.Trim()
                 };
-                bool recordInsertResult = this._userRepository.AddUser(newUserModel); //添加用户结果
+                this._userRepository.AddUser(newUserModel);
+                bool recordInsertResult = u.SaveChanges() == 1; //添加用户结果
 
                 string token = "";
                 if (recordInsertResult)

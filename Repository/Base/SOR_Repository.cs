@@ -16,6 +16,25 @@ namespace Repository.Base
         /// </summary>
         public BAMDbContext Db { get; set; }
         /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="coverHasDeletedRecord">是否涵盖已删除记录，默认不涵盖</param>
+        /// <returns></returns>
+        public virtual IQueryable<T> Find(bool coverHasDeletedRecord = false)
+        {
+            if (coverHasDeletedRecord)
+                return this.Db.Set<T>();
+            else
+                return this.Db.Set<T>().Where(u => !u.IsDeleted);
+        }
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="whereExpression">数据筛选表达式</param>
+        /// <returns></returns>
+        public virtual IQueryable<T> Find(Expression<Func<T, bool>> whereExpression)
+            => this.Db.Set<T>().Where(whereExpression);
+        /// <summary>
         /// 添加
         /// </summary>
         /// <param name="model"></param>

@@ -42,11 +42,10 @@ namespace Repository.Repositories
         /// </summary>
         /// <param name="model">新用户</param>
         /// <returns></returns>
-        public bool AddUser([NotNull] BM_User model)
+        public void AddUser([NotNull] BM_User model)
         {
             model.Password = $"{model.Password}_{_passwordEncryptSuffix}".MD5Encrypt32();
             base.Db.BM_User.Add(model);
-            return base.Db.SaveChanges() > 0;
         }
     }
 }

@@ -15,3 +15,13 @@ G:\dotnet_2020\adminprojectsample_v1\Infrastructure\obj\Debug\netcoreapp3.1\Infr
 G:\dotnet_2020\adminprojectsample_v1\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb
 G:\dotnet_2020\adminprojectsample_v1\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csprojAssemblyReference.cache
 G:\dotnet_2020\adminprojectsample_v1\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.xml
+D:\private\admincore\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csprojAssemblyReference.cache
+D:\private\admincore\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfoInputs.cache
+D:\private\admincore\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfo.cs
+D:\private\admincore\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache
+D:\private\admincore\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
+D:\private\admincore\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb
+D:\private\admincore\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.deps.json
+D:\private\admincore\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.dll
+D:\private\admincore\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+D:\private\admincore\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.xml

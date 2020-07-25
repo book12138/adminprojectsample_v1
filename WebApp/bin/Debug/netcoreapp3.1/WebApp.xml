@@ -74,6 +74,12 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
+        <member name="M:WebApp.Controllers.PermissionController.GetCascaderData">
+            <summary>
+            获取 饿了么UI 级联选择器填充用的数据
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:WebApp.Middlewares.SwaggerMildd">
             <summary>
             Cors 启动服务

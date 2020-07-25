@@ -17,5 +17,10 @@ namespace Application.IServices
         /// <param name="userId">用户id</param>
         /// <returns>是否添加成功</returns>
         bool AddMenu(NewMenuRecordDto dto, long userId);
+        /// <summary>
+        /// 获取 饿了么UI 级联选择器填充用的数据
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<CascaderRecordDto> GetCascaderData();
     }
 }

@@ -42,12 +42,20 @@ namespace WebApp.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost("AddMenu")]
-        public RightOrWrongResult AddMenu([FromForm] NewMenuRecordDto dto)
+        public RightOrWrongResult AddMenu([FromBody] NewMenuRecordDto dto)
         {
             var tokenModel = HttpContext.GetTokenModel();
             if (tokenModel == null)
                 return new RightOrWrongResult() { IsTrue = false, Message = "您还未登录" };
             return new RightOrWrongResult() { IsTrue = this._menuService.AddMenu(dto, tokenModel.Uid) };
         }
+
+        /// <summary>
+        /// 获取 饿了么UI 级联选择器填充用的数据
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GetCascaderData")]
+        public IEnumerable<CascaderRecordDto> GetCascaderData()
+            => this._menuService.GetCascaderData();
     }
 }

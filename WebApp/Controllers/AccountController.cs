@@ -17,8 +17,7 @@ namespace WebApp.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors(PolicyName = "_myAllowSpecificOrigins")]
-    [Authorize]
+    [EnableCors(PolicyName = "_myAllowSpecificOrigins")]    
     public class AccountController : ControllerBase
     {
         /// <summary>
@@ -39,7 +38,7 @@ namespace WebApp.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost("Login")]
-        public LoginResult Login([FromForm] UsernamePasswordCombinationDto dto)
+        public LoginResult Login([FromBody] UsernamePasswordCombinationDto dto)
             => this._accountService.Login(dto);
 
         /// <summary>
@@ -57,7 +56,7 @@ namespace WebApp.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost("Register")]
-        public RegisterResult Register([FromForm] AccountRegisterDto dto)
+        public RegisterResult Register([FromBody] AccountRegisterDto dto)
             => this._accountService.Register(dto);
     }
 }

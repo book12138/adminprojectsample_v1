@@ -33,6 +33,6 @@ namespace Domain.IRepositories
         /// </summary>
         /// <param name="model">新用户</param>
         /// <returns></returns>
-        bool AddUser(BM_User model);
+        void AddUser(BM_User model);
     }
 }

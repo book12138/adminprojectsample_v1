@@ -49,6 +49,7 @@ namespace WebApp
             builder.RegisterType<BM_UserRepository>().As<IBM_UserRepository>();
             builder.RegisterType<BM_RoleRepository>().As<IBM_RoleRepository>();
             builder.RegisterType<BM_MenuRepository>().As<IBM_MenuRepository>();
+            builder.RegisterType<MenuService>().As<IMenuService>();
         }
 
         readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";

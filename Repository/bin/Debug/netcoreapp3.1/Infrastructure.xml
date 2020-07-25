@@ -75,6 +75,26 @@
             提示信息
             </summary>
         </member>
+        <member name="T:Infrastructure.Dto.CascaderRecordDto">
+            <summary>
+            饿了么UI 级联选择器填充数据传输模型
+            </summary>
+        </member>
+        <member name="P:Infrastructure.Dto.CascaderRecordDto.Value">
+            <summary>
+            包含的值
+            </summary>
+        </member>
+        <member name="P:Infrastructure.Dto.CascaderRecordDto.Lable">
+            <summary>
+            用于显示的文字
+            </summary>
+        </member>
+        <member name="P:Infrastructure.Dto.CascaderRecordDto.Children">
+            <summary>
+            子级
+            </summary>
+        </member>
         <member name="T:Infrastructure.Dto.LoginResult">
             <summary>
             用户登录结果

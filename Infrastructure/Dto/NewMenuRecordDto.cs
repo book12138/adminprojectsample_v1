@@ -18,8 +18,7 @@ namespace Infrastructure.Dto
         /// <summary>
         /// url
         /// </summary>
-        [Required]        
-        public string Url { get; set; }
+        public string Url { get; set; } = "";
         /// <summary>
         /// 是否显示
         /// </summary>        
